@@ -1,0 +1,23 @@
+wordpress:
+  environment:
+    - 'WORDPRESS_DB_HOST=wordpressdb:3306'
+    - WORDPRESS_DB_NAME=db_name
+    - WORDPRESS_DB_PASSWORD=db_password
+    - WORDPRESS_DB_USER=db_user
+    - WORDPRESS_TABLE_PREFIX=db_prefix
+  image: 'wordpress:latest-apache'
+  links:
+    - 'wordpressdb:mysql'
+  restart: always
+  volumes:
+    - '/path-on-server/wordpress:/var/www/html'
+wordpressdb:
+  environment:
+    - MYSQL_DATABASE=db_name
+    - MYSQL_PASSWORD=db_password
+    - MYSQL_ROOT_PASSWORD=db_root_password
+    - MYSQL_USER=db_user
+  image: 'mariadb:latest'
+  restart: always
+  volumes:
+    - '/path-on-server/db_data:/var/lib/mysql'
