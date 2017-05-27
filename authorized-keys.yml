@@ -1,0 +1,8 @@
+authorizedkeys:
+  autodestroy: always
+  deployment_strategy: every_node
+  environment:
+    - AUTHORIZED_KEYS=your_public_ssh_key
+  image: 'dockercloud/authorizedkeys:latest'
+  volumes:
+    - '/root:/user'
