@@ -27,6 +27,15 @@ environment:
 [Stack file](reverse-proxy.yml)
 
 
+## Monitoring
+
+### Netdata
+
+To configure Slack alerts get your webhook URL. [More infos here](https://www.programmableweb.com/news/how-to-integrate-webhooks-slack-api/how-to/2015/10/20)
+
+[Stack file](monitoring-netdata.yml)
+
+
 ## WordPress
 
 ### WordPress + MariaDB
