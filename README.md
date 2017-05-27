@@ -35,6 +35,10 @@ To configure Slack alerts get your webhook URL. [More infos here](https://www.pr
 
 [Stack file](monitoring-netdata.yml)
 
+### cAdvisor
+
+[Stack file](monitoring-cadvisor.yml)
+
 
 ## WordPress
 
