@@ -1,0 +1,10 @@
+web:
+  environment:
+    - SLACK_CHANNEL=slack_channel
+    - 'SLACK_WEBHOOK_URL=slack_webhook_url'
+  image: 'titpetric/netdata:latest'
+  restart: always
+  volumes:
+    - '/proc:/host/proc:ro'
+    - '/sys:/host/sys:ro'
+    - '/var/run/docker.sock:/var/run/docker.sock'
