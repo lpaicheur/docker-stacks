@@ -2,6 +2,16 @@
 
 A list of ready to use stack files to power your favorite services on Docker Cloud
 
+## Setup
+
+### SSH Keys
+
+Add your ssh keys to all your servers with a single file.
+Replace "your_public_ssh_key" with your SSH public-key.
+You can copy your key by pasting `pbcopy < ~/.ssh/id_rsa.pub` in your terminal.
+
+[Stack file](authorized-keys.yml)
+
 ## WordPress
 
 ### WordPress + MariaDB
