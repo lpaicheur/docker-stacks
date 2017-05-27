@@ -24,6 +24,9 @@ environment:
     - VIRTUAL_HOST=your_domain_name
 ```
 
+[Stack file](reverse-proxy.yml)
+
+
 ## WordPress
 
 ### WordPress + MariaDB
