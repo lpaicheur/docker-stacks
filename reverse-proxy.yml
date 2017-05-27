@@ -1,0 +1,23 @@
+certifssl:
+  autoredeploy: true
+  image: 'jrcs/letsencrypt-nginx-proxy-companion:latest'
+  restart: always
+  volumes:
+    - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    - '/path-on-server/certs:/etc/nginx/certs'
+  volumes_from:
+    - reverseproxy
+reverseproxy:
+  autoredeploy: true
+  deployment_strategy: every_node
+  image: 'louispch/reverse-proxy:latest'
+  ports:
+    - '80:80'
+    - '443:443'
+  restart: always
+  volumes:
+    - '/var/run/docker.sock:/tmp/docker.sock:ro'
+    - '/path-on-server/certs:/etc/nginx/certs:ro'
+    - '/path-on-server/htpasswd:/etc/nginx/htpasswd'
+    - /etc/nginx/vhost.d
+    - /usr/share/nginx/html
