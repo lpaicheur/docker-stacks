@@ -5,7 +5,7 @@ wordpress:
     - WORDPRESS_DB_PASSWORD=db_password
     - WORDPRESS_DB_USER=db_user
     - WORDPRESS_TABLE_PREFIX=db_prefix
-  image: 'wordpress:latest-apache'
+  image: 'wordpress:latest'
   links:
     - 'wordpressdb:mysql'
   restart: always
